@@ -18,35 +18,58 @@
             
             <div class="auth-header">
                 <a href="index.html" class="logo-auth">
-                    <span>Fr<span style="color: var(--secondary);">ee</span>lacademy</span>
-                    <img src="assets/img/logo-passaro-original.svg" alt="Pássaro">
+                    <span>Fr<span style="color: var(--secondary);">ee</span>lAcademy</span>
+                    <img src="assets/img/logo-passaro-original.svg" alt="Pássaro FreelAcademy">
                 </a>
                 <p>Bem-vindo de volta! Acesse sua conta.</p>
             </div>
 
-            <form action="client-home.html">
+            <form id="formLogin">
+                
+                <label class="form-label">Acessar como:</label>
+                <div class="type-selector" style="margin-bottom: 20px;">
+                    <label class="type-option">
+                        <input type="radio" name="tipoAcesso" value="freelancer" checked>
+                        <div class="type-box">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Freelancer</span>
+                        </div>
+                    </label>
+                    <label class="type-option">
+                        <input type="radio" name="tipoAcesso" value="cliente">
+                        <div class="type-box">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Cliente</span>
+                        </div>
+                    </label>
+                </div>
+
                 <div class="form-group">
                     <label class="form-label">E-mail</label>
-                    <input type="email" class="form-input" placeholder="seu@email.com" required>
+                    <input type="email" id="emailLogin" class="form-input" placeholder="seu@email.com" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" style="margin-bottom: 10px;">
                     <label class="form-label">Senha</label>
-                    <input type="password" class="form-input" placeholder="••••••••" required>
+                    <input type="password" id="senhaLogin" class="form-input" placeholder="••••••••" required>
                 </div>
 
-                <div class="check-wrapper" style="justify-content: space-between;">
-                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                        <input type="checkbox"> Lembrar de mim
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                    <div class="check-wrapper" style="margin: 0;">
+                        <input type="checkbox" id="lembrar-mim">
+                        <label for="lembrar-mim">Lembrar de mim</label>
+                    </div>
+                    <a href="recuperar-senha.html" style="font-size: 0.9rem; color: var(--secondary); text-decoration: none; font-weight: 600;">Esqueci a senha</a>
+                </div>
+
+                <div class="check-wrapper">
+                    <input type="checkbox" required id="login-termos">
+                    <label for="login-termos">
+                        Li e concordo com os <a href="termos.html" target="_blank">Termos de Uso</a> e a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.
                     </label>
-                    <a href="#" style="font-size: 0.9rem; color: var(--secondary); text-decoration: none;">Esqueceu?</a>
                 </div>
 
-                <div class="check-wrapper" style="font-size: 0.75rem; color: #999; border-top: 1px solid #f5f5f5; padding-top: 10px;">
-                    <p>Ao entrar, você concorda com nossos <a href="#">Termos</a> e <a href="#">Privacidade</a>.</p>
-                </div>
-
-                <button type="submit" class="btn-submit">Entrar</button>
+                <button type="submit" class="btn-submit" style="margin-top: 10px;">Entrar</button>
             </form>
 
             <div class="auth-footer">
@@ -58,5 +81,6 @@
         </div>
     </div>
 
+    <script src="assets/js/scripts.js"></script>
 </body>
-</html> 
+</html>

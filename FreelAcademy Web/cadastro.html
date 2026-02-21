@@ -24,7 +24,7 @@
                 <p>Crie sua conta gratuita em segundos.</p>
             </div>
 
-            <form action="login.html">
+            <form id="formCadastro">
                 
                 <label class="form-label">Eu quero:</label>
                 <div class="type-selector">
@@ -46,12 +46,17 @@
 
                 <div class="form-group">
                     <label class="form-label">Nome Completo</label>
-                    <input type="text" class="form-input" placeholder="Seu nome" required>
+                    <input type="text" id="nomeCompleto" class="form-input" placeholder="Seu nome" required>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">E-mail</label>
                     <input type="email" class="form-input" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Data de Nascimento</label>
+                    <input type="date" id="dataNascimento" class="form-input" required>
                 </div>
 
                 <div class="form-group">
@@ -62,7 +67,7 @@
                 <div class="check-wrapper">
                     <input type="checkbox" required id="lgpd-check">
                     <label for="lgpd-check">
-                        Li e concordo com os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a>.
+                        Li e concordo com os <a href="termos.html" target="_blank">Termos de Uso</a> e a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.
                     </label>
                 </div>
 
@@ -78,5 +83,6 @@
         </div>
     </div>
 
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
