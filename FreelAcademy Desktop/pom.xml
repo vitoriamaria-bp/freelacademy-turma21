@@ -16,10 +16,16 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>13.2.1.jre11</version>
         </dependency>
+      <dependency>
+   	   <groupId>org.junit.jupiter</groupId>
+   	   <artifactId>junit-jupiter</artifactId>
+   	   <version>5.10.2</version>
+   	  <scope>test</scope>
+	</dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>24</maven.compiler.release>
+        <maven.compiler.release>17</maven.compiler.release>
         <exec.mainClass>com.mycompany.freelacademy.FreelAcademy</exec.mainClass>
     </properties>
 </project>
