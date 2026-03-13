@@ -1,0 +1,25 @@
+# Maven
+target/
+
+# Arquivos compilados
+*.class
+*.jar
+*.war
+
+# Logs
+*.log
+
+# IDE NetBeans
+nbproject/private/
+build/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Test reports
+surefire-reports/
+
+# Arquivos temporários
+*.tmp
+*.swp/target/
