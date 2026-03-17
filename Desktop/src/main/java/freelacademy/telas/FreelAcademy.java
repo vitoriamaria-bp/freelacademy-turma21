@@ -3,6 +3,12 @@ package freelacademy.telas;
 public class FreelAcademy {
 
     public static void main(String[] args) {
-        System.out.println("Bem vindo ao sistema FreelAcademy.");
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            @Override
+            public void run() {
+                new TelaHome().setVisible(true);
+            }
+        });        
+               
     }
 }
