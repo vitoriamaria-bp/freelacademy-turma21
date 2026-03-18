@@ -49,7 +49,7 @@ public class TelaBackup extends javax.swing.JFrame {
     private void btnBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackupActionPerformed
         Backup back = new Backup();
         try{
-            back.fazBackup();
+            back.fazerBackup();
             txtMensagem.setText("Backup realizado com sucesso!");
         } catch(Exception ex) {
             txtMensagem.setText("Erro ao realizar o backup!");

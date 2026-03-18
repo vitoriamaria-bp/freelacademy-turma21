@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Backup {
-    public void fazBackup() throws SQLException {
-        String sql = "EXEC sp_FazerBackup";
+    public void fazerBackup() throws SQLException {
+        String sql = "EXEC sp_fazerBackup";
         
         try (
             // Criando conexão com o banco
