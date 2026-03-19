@@ -124,7 +124,7 @@ if (!senhaDigitada.equals(confirmar)) {
 }
 
 // 3️⃣ Conexão com banco
-String servidor = "TBS0676767W11-1\\SQLEXPRESS";
+String servidor = "DESKTOP-NHTT4M9";
 String banco = "db_freelacademy";
 String usuarioBanco = "sa";
 String senhaBanco = "marcos";
