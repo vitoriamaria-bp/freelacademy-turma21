@@ -22,7 +22,9 @@ public class TelaEConfiguracoes extends javax.swing.JFrame {
         btnSair = new javax.swing.JButton();
         comboIdiomas = new javax.swing.JComboBox<>();
         comboPais = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnBackup = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela Configurações Emoresa");
@@ -41,7 +43,7 @@ public class TelaEConfiguracoes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnPerfil);
-        btnPerfil.setBounds(30, 80, 140, 27);
+        btnPerfil.setBounds(30, 80, 140, 23);
 
         btnSair.setText("SAIR");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -70,10 +72,24 @@ public class TelaEConfiguracoes extends javax.swing.JFrame {
         getContentPane().add(comboPais);
         comboPais.setBounds(590, 340, 300, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaEConfiguracoes.png"))); // NOI18N
+        jButton1.setText("BACKUP");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(30, 120, 140, 23);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -150, 1100, 990);
+        jLabel1.setBounds(410, 310, 150, 100);
+
+        btnBackup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaEConfiguracoes.png"))); // NOI18N
+        btnBackup.setText("jLabel1");
+        getContentPane().add(btnBackup);
+        btnBackup.setBounds(0, -150, 1100, 990);
 
         pack();
         setLocationRelativeTo(null);
@@ -105,6 +121,13 @@ public class TelaEConfiguracoes extends javax.swing.JFrame {
         //escolhe os paises
     }//GEN-LAST:event_comboPaisActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //Leva o usuario para a tela de backup
+        TelaBackup tela = new TelaBackup();
+        tela.setVisible(true);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -128,11 +151,13 @@ public class TelaEConfiguracoes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnBackup;
     private javax.swing.JButton btnPerfil;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> comboIdiomas;
     private javax.swing.JComboBox<String> comboPais;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

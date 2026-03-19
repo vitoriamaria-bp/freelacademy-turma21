@@ -18,6 +18,7 @@ public class TelaBackup extends javax.swing.JFrame {
 
         btnBackup = new javax.swing.JButton();
         txtMensagem = new javax.swing.JLabel();
+        btnVoltar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -34,9 +35,18 @@ public class TelaBackup extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnBackup);
-        btnBackup.setBounds(150, 180, 130, 40);
+        btnBackup.setBounds(150, 150, 130, 40);
         getContentPane().add(txtMensagem);
         txtMensagem.setBounds(77, 230, 280, 0);
+
+        btnVoltar.setText("VOLTAR");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVoltar);
+        btnVoltar.setBounds(180, 210, 75, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaBackup.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -57,6 +67,15 @@ public class TelaBackup extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnBackupActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        //volta o usuario a tela anterior
+        TelaFConfiguracoes tela = new TelaFConfiguracoes();
+        tela.setVisible(true);
+        
+        //Fecha a tela atual
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -82,6 +101,7 @@ public class TelaBackup extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackup;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel txtMensagem;
     // End of variables declaration//GEN-END:variables

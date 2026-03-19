@@ -18,9 +18,9 @@ public class TelaFComeco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtPesquisar = new javax.swing.JTextField();
         btnConfigurações = new javax.swing.JButton();
         btnPerfil = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -28,10 +28,6 @@ public class TelaFComeco extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1100, 700));
         setResizable(false);
         getContentPane().setLayout(null);
-
-        txtPesquisar.setText("Pesquise aqui...");
-        getContentPane().add(txtPesquisar);
-        txtPesquisar.setBounds(180, 0, 570, 50);
 
         btnConfigurações.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Config btn.png"))); // NOI18N
         btnConfigurações.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -55,6 +51,11 @@ public class TelaFComeco extends javax.swing.JFrame {
         });
         getContentPane().add(btnPerfil);
         btnPerfil.setBounds(1000, 10, 40, 40);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(220, 0, 60, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaFComeco.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -112,6 +113,6 @@ public class TelaFComeco extends javax.swing.JFrame {
     private javax.swing.JButton btnConfigurações;
     private javax.swing.JButton btnPerfil;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField txtPesquisar;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

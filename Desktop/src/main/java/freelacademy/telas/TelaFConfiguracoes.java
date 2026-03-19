@@ -22,6 +22,8 @@ public class TelaFConfiguracoes extends javax.swing.JFrame {
         btnSair = new javax.swing.JButton();
         comboIdiomas = new javax.swing.JComboBox<>();
         comboRegiao = new javax.swing.JComboBox<>();
+        btnBackup = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -41,7 +43,7 @@ public class TelaFConfiguracoes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnPerfil);
-        btnPerfil.setBounds(30, 80, 130, 27);
+        btnPerfil.setBounds(30, 80, 130, 23);
 
         btnSair.setText("SAIR");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +61,20 @@ public class TelaFConfiguracoes extends javax.swing.JFrame {
         comboRegiao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brasil", "Estados Unidos", "Canadá", "México", "Argentina", "França", "Alemanha", "Itália", "Japão", "Austrália" }));
         getContentPane().add(comboRegiao);
         comboRegiao.setBounds(590, 350, 300, 40);
+
+        btnBackup.setText("BACKUP");
+        btnBackup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackupActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBackup);
+        btnBackup.setBounds(30, 120, 130, 23);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
+        jLabel2.setText("..");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(410, 320, 150, 90);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaFConfigurações.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -83,9 +99,16 @@ public class TelaFConfiguracoes extends javax.swing.JFrame {
         TelaFComeco tela = new TelaFComeco();
         tela.setVisible(true);
         
-        //função pra fechar janela anterior
-            this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackupActionPerformed
+        //Leva o usuario para a tela de backup
+        TelaBackup tela = new TelaBackup();
+        tela.setVisible(true);
+        
+        //função que fecha a janela atual 
+        this.dispose();
+    }//GEN-LAST:event_btnBackupActionPerformed
 
     
     public static void main(String args[]) {
@@ -111,11 +134,13 @@ public class TelaFConfiguracoes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBackup;
     private javax.swing.JButton btnPerfil;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> comboIdiomas;
     private javax.swing.JComboBox<String> comboRegiao;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

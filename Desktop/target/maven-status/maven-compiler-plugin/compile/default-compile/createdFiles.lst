@@ -2,6 +2,7 @@ freelacademy\telas\TelaHome$3.class
 freelacademy\telas\TelaEscolhe$1.class
 freelacademy\telas\TelaLogin$3.class
 freelacademy\telas\TelaEPortifolio$5.class
+freelacademy\telas\TelaFConfiguracoes$3.class
 freelacademy\telas\TelaEProjetos$2.class
 freelacademy\telas\TelaComoFunciona.class
 freelacademy\telas\TelaEProjetos.class
@@ -65,6 +66,7 @@ freelacademy\telas\TelaFCurriculo$3.class
 freelacademy\telas\TelaFProjetos$5.class
 freelacademy\telas\FreelAcademy.class
 freelacademy\telas\TelaEConfiguracoes$2.class
+freelacademy\telas\TelaEProjetos$6.class
 freelacademy\telas\TelaFComeco.class
 freelacademy\telas\TelaFHome$1.class
 freelacademy\telas\TelaEPortifolio$1.class
@@ -76,6 +78,7 @@ freelacademy\telas\Main.class
 freelacademy\telas\TelaBackup$1.class
 freelacademy\telas\TelaHome$2.class
 freelacademy\telas\TelaFCarteira$2.class
+freelacademy\telas\TelaEConfiguracoes$5.class
 freelacademy\telas\TelaEscolhe$2.class
 conexaodb\ConexaoDB.class
 freelacademy\telas\TelaTermosCond$1.class
@@ -83,6 +86,7 @@ freelacademy\telas\TelaFProjetos.class
 conexaodb\Backup.class
 freelacademy\telas\TelaECarteira.class
 freelacademy\telas\TelaFComeco$3.class
+freelacademy\telas\TelaBackup$2.class
 freelacademy\telas\TelaEConfiguracoes$4.class
 freelacademy\telas\TelaFHome$3.class
 freelacademy\telas\TelaFComeco$2.class

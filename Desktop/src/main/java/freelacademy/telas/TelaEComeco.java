@@ -17,11 +17,9 @@ public class TelaEComeco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        textPesquisar = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
         btnConfiguracoes = new javax.swing.JButton();
         btnPerfil = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -29,18 +27,6 @@ public class TelaEComeco extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1100, 700));
         setResizable(false);
         getContentPane().setLayout(null);
-
-        textPesquisar.setText("Pesquise aqui...");
-        getContentPane().add(textPesquisar);
-        textPesquisar.setBounds(180, 0, 570, 50);
-
-        jTextField7.setText("jTextField7");
-        getContentPane().add(jTextField7);
-        jTextField7.setBounds(290, 10, 75, 26);
-
-        jTextField8.setText("jTextField8");
-        getContentPane().add(jTextField8);
-        jTextField8.setBounds(290, 20, 75, 26);
 
         btnConfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Config btn.png"))); // NOI18N
         btnConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +45,11 @@ public class TelaEComeco extends javax.swing.JFrame {
         });
         getContentPane().add(btnPerfil);
         btnPerfil.setBounds(1000, 10, 40, 40);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(220, 0, 60, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaEComeco.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -112,8 +103,6 @@ public class TelaEComeco extends javax.swing.JFrame {
     private javax.swing.JButton btnConfiguracoes;
     private javax.swing.JButton btnPerfil;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField textPesquisar;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

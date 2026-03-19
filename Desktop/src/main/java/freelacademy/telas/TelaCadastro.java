@@ -124,7 +124,7 @@ if (!senhaDigitada.equals(confirmar)) {
 }
 
 // 3️⃣ Conexão com banco
-String servidor = "DESKTOP-NHTT4M9";
+String servidor = "TBS0676767W11-1\\SQLEXPRESS";
 String banco = "db_freelacademy";
 String usuarioBanco = "sa";
 String senhaBanco = "marcos";
@@ -148,6 +148,7 @@ try {
             pst.setString(2, textEmail.getText());
             pst.setString(3, textTelefone.getText());
             pst.setString(4, senhaDigitada);
+            
 
             // 🟢 Try-catch específico para UNIQUE
             try {

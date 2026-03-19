@@ -73,7 +73,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEsqueceuSenha);
-        btnEsqueceuSenha.setBounds(130, 440, 170, 27);
+        btnEsqueceuSenha.setBounds(130, 440, 170, 23);
 
         btnCadastrar.setText("CADASTRAR - SE");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
