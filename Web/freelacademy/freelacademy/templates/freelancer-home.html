@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}Meu Painel | FreelAcademy{% endblock %}
+
+{% block content %}
+    <div class="dashboard-hero">
+        <div class="hero-text">
+            <h2>Olá, {{ request.user.first_name|default:request.user.username|title }}!</h2>
+            <p>Bem-vindo ao seu painel. Encontre projetos e gerencie seus trabalhos aqui.</p>
+        </div>
+        <div>
+            <a href="{% url 'freelancer_buscar_projetos' %}" class="btn-action-hero"><i class="fas fa-search"></i> Buscar Projetos</a>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card card-purple">
+            <div class="stat-icon icon-purple"><i class="fas fa-paper-plane"></i></div>
+            <div class="stat-data">
+                <p>Propostas Enviadas</p>
+                <h3>0</h3>
+            </div>
+        </div>
+        <div class="stat-card card-green">
+            <div class="stat-icon icon-green"><i class="fas fa-check-double"></i></div>
+            <div class="stat-data">
+                <p>Projetos Aprovados</p>
+                <h3>0</h3>
+            </div>
+        </div>
+        <div class="stat-card card-blue">
+            <div class="stat-icon icon-blue"><i class="fas fa-laptop-code"></i></div>
+            <div class="stat-data">
+                <p>Em Andamento</p>
+                <h3>0</h3>
+            </div>
+        </div>
+        <div class="stat-card card-orange">
+            <div class="stat-icon icon-orange"><i class="fas fa-dollar-sign"></i></div>
+            <div class="stat-data">
+                <p>A Receber</p>
+                <h3>R$ 0,00</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-box">
+        <div class="table-header">
+            <h3>Meus Projetos Ativos</h3>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40%;">Projeto</th>
+                    <th style="width: 20%;">Cliente</th>
+                    <th style="width: 20%;">Prazo de Entrega</th>
+                    <th style="width: 20%; text-align: right;">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4" style="text-align: center; padding: 40px; color: #888;">
+                        Você ainda não possui projetos em andamento.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form-wrapper" style="max-width: 800px; margin: 0 auto;">
+    <form method="POST" enctype="multipart/form-data" class="form-card" style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        {% csrf_token %}
+        <div style="display: flex; gap: 30px; align-items: center; margin-bottom: 30px;">
+            <div style="position: relative;">
+                {% if request.user.foto_perfil %}
+                    <img src="{{ request.user.foto_perfil.url }}" id="preview" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #eee;">
+                {% else %}
+                    <img src="https://ui-avatars.com/api/?name={{ request.user.first_name }}&background=025959&color=fff" id="preview" style="width: 120px; height: 120px; border-radius: 50%;">
+                {% endif %}
+                <label for="foto_perfil" style="position: absolute; bottom: 0; right: 0; background: var(--secondary); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 2px solid white;">
+                    <i class="fas fa-camera"></i>
+                </label>
+                <input type="file" name="foto_perfil" id="foto_perfil" style="display: none;" accept="image/*" onchange="previewImage(event)">
+            </div>
+            <div style="flex: 1;">
+                <h3 style="margin: 0;">{{ request.user.get_full_name|default:request.user.username }}</h3>
+                <textarea name="descricao" class="dash-textarea" placeholder="Sua biografia profissional..." style="margin-top: 10px; height: 80px;">{{ request.user.descricao|default:'' }}</textarea>
+            </div>
+        </div>
+
+        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div><label class="dash-label">Telefone</label><input type="text" name="telefone" class="dash-input" value="{{ request.user.telefone }}"></div>
+            <div><label class="dash-label">Cidade</label><input type="text" name="cidade" class="dash-input" value="{{ request.user.cidade|default:'' }}"></div>
+            <div><label class="dash-label">Estado (UF)</label><input type="text" name="estado" class="dash-input" value="{{ request.user.estado|default:'' }}" maxlength="2"></div>
+            <div style="display: flex; align-items: center; gap: 10px; padding-top: 25px;">
+                <input type="checkbox" name="perfil_publico" id="perfil_publico" {% if request.user.perfil_publico %}checked{% endif %}>
+                <label for="perfil_publico">Perfil público (LGPD)</label>
+            </div>
+        </div>
+        <div style="margin-top: 30px; text-align: right;"><button type="submit" class="btn-publish">Salvar Alterações</button></div>
+    </form>
+</div>
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function(){ document.getElementById('preview').src = reader.result; };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+{% endblock %}
