@@ -20,8 +20,11 @@ public class TelaFComeco extends javax.swing.JFrame {
 
         btnConfigurações = new javax.swing.JButton();
         btnPerfil = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        btnCandidatar0 = new javax.swing.JButton();
+        btnCandidatar1 = new javax.swing.JButton();
+        btnCandidatar2 = new javax.swing.JButton();
+        btnCandidatar3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela F Dashboard");
@@ -52,14 +55,26 @@ public class TelaFComeco extends javax.swing.JFrame {
         getContentPane().add(btnPerfil);
         btnPerfil.setBounds(1000, 10, 40, 40);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(220, 0, 60, 50);
+        btnCandidatar0.setText("CANDIDATAR - SE");
+        getContentPane().add(btnCandidatar0);
+        btnCandidatar0.setBounds(120, 440, 140, 27);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaFComeco.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1100, 700);
+        btnCandidatar1.setText("CANDIDATAR - SE");
+        getContentPane().add(btnCandidatar1);
+        btnCandidatar1.setBounds(360, 440, 140, 27);
+
+        btnCandidatar2.setText("CANDIDATAR - SE");
+        getContentPane().add(btnCandidatar2);
+        btnCandidatar2.setBounds(610, 440, 140, 27);
+
+        btnCandidatar3.setText("CANDIDATAR - SE");
+        getContentPane().add(btnCandidatar3);
+        btnCandidatar3.setBounds(850, 440, 140, 27);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaFComeco.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 1100, 700);
 
         pack();
         setLocationRelativeTo(null);
@@ -110,9 +125,12 @@ public class TelaFComeco extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCandidatar0;
+    private javax.swing.JButton btnCandidatar1;
+    private javax.swing.JButton btnCandidatar2;
+    private javax.swing.JButton btnCandidatar3;
     private javax.swing.JButton btnConfigurações;
     private javax.swing.JButton btnPerfil;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

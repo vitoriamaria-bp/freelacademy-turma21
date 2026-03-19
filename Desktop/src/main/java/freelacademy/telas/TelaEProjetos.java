@@ -38,7 +38,7 @@ public class TelaEProjetos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnHome);
-        btnHome.setBounds(30, 80, 140, 23);
+        btnHome.setBounds(30, 80, 140, 27);
 
         btnPortifolio.setText("PORTIFOLIO");
         btnPortifolio.addActionListener(new java.awt.event.ActionListener() {
@@ -47,7 +47,7 @@ public class TelaEProjetos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnPortifolio);
-        btnPortifolio.setBounds(30, 120, 140, 23);
+        btnPortifolio.setBounds(30, 120, 140, 27);
 
         btnProjetos.setText("PROJETOS");
         btnProjetos.addActionListener(new java.awt.event.ActionListener() {
@@ -56,7 +56,7 @@ public class TelaEProjetos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnProjetos);
-        btnProjetos.setBounds(30, 160, 140, 23);
+        btnProjetos.setBounds(30, 160, 140, 27);
 
         btnCarteira.setText("CARTEIRA");
         btnCarteira.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +65,7 @@ public class TelaEProjetos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCarteira);
-        btnCarteira.setBounds(30, 200, 140, 23);
+        btnCarteira.setBounds(30, 200, 140, 27);
 
         btnSair.setText("SAIR");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +87,7 @@ public class TelaEProjetos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(430, 370, 350, 40);
+        jComboBox1.setBounds(430, 360, 350, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaEProjeto.png"))); // NOI18N
         jLabel1.setText("jLabel1");

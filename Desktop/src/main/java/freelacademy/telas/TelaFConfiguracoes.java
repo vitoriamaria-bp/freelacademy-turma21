@@ -43,7 +43,7 @@ public class TelaFConfiguracoes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnPerfil);
-        btnPerfil.setBounds(30, 80, 130, 23);
+        btnPerfil.setBounds(30, 80, 130, 27);
 
         btnSair.setText("SAIR");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +55,11 @@ public class TelaFConfiguracoes extends javax.swing.JFrame {
         btnSair.setBounds(20, 600, 140, 40);
 
         comboIdiomas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Português", "Inglês", "Espanhol", "Francês", "Alemão", "Italiano", "Japonês", "Chinês", "Russo", "Árabe" }));
+        comboIdiomas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboIdiomasActionPerformed(evt);
+            }
+        });
         getContentPane().add(comboIdiomas);
         comboIdiomas.setBounds(590, 290, 300, 40);
 
@@ -69,7 +74,7 @@ public class TelaFConfiguracoes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnBackup);
-        btnBackup.setBounds(30, 120, 130, 23);
+        btnBackup.setBounds(30, 120, 130, 27);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
         jLabel2.setText("..");
@@ -109,6 +114,10 @@ public class TelaFConfiguracoes extends javax.swing.JFrame {
         //função que fecha a janela atual 
         this.dispose();
     }//GEN-LAST:event_btnBackupActionPerformed
+
+    private void comboIdiomasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboIdiomasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboIdiomasActionPerformed
 
     
     public static void main(String args[]) {

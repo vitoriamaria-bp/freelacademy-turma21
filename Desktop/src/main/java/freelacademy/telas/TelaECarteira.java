@@ -21,6 +21,8 @@ public class TelaECarteira extends javax.swing.JFrame {
         btnPortifolio = new javax.swing.JToggleButton();
         btnProjetos = new javax.swing.JToggleButton();
         btnCarteira = new javax.swing.JToggleButton();
+        textContaBancaria = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -45,7 +47,7 @@ public class TelaECarteira extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnHome);
-        btnHome.setBounds(30, 70, 140, 23);
+        btnHome.setBounds(30, 70, 140, 27);
 
         btnPortifolio.setText("PORTIFOLIO");
         btnPortifolio.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +56,7 @@ public class TelaECarteira extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnPortifolio);
-        btnPortifolio.setBounds(30, 110, 140, 23);
+        btnPortifolio.setBounds(30, 110, 140, 27);
 
         btnProjetos.setText("PROJETOS");
         btnProjetos.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +65,7 @@ public class TelaECarteira extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnProjetos);
-        btnProjetos.setBounds(30, 150, 140, 23);
+        btnProjetos.setBounds(30, 150, 140, 27);
 
         btnCarteira.setText("CARTEIRA");
         btnCarteira.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +74,13 @@ public class TelaECarteira extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCarteira);
-        btnCarteira.setBounds(30, 190, 140, 23);
+        btnCarteira.setBounds(30, 190, 140, 27);
+        getContentPane().add(textContaBancaria);
+        textContaBancaria.setBounds(310, 170, 680, 40);
+
+        jButton1.setText("SALVAR");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(570, 470, 120, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaECarteira.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -160,6 +168,8 @@ public class TelaECarteira extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnPortifolio;
     private javax.swing.JToggleButton btnProjetos;
     private javax.swing.JButton btnSair;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField textContaBancaria;
     // End of variables declaration//GEN-END:variables
 }

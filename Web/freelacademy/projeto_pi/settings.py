@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'mssql',
         'NAME': 'db_freelacademy',
-        'USER' : 'sao',
+        'USER' : 'sa',
         'PASSWORD': 'marcos',
-        'HOST': 'TBS0676767W11-1\SQLEXPRESS',
+        'HOST': 'DESKTOP-NHTT4M9',
         'PORT': '1433',
         'OPTIONS':{
             'driver': 'ODBC Driver 18 for SQL Server',

@@ -66,7 +66,7 @@ public class TelaAviso extends javax.swing.JFrame {
     private void btnSiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiteActionPerformed
         //botão que leva o usuario para o site
         try{
-            Desktop.getDesktop().browse(new URI(""));
+            Desktop.getDesktop().browse(new URI("http://127.0.0.1:8000/"));
         }
         catch(Exception e)
         {}

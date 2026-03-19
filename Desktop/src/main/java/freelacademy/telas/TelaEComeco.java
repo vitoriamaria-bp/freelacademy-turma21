@@ -19,8 +19,11 @@ public class TelaEComeco extends javax.swing.JFrame {
 
         btnConfiguracoes = new javax.swing.JButton();
         btnPerfil = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        btnProposta0 = new javax.swing.JButton();
+        btnProposta1 = new javax.swing.JButton();
+        btnProposta2 = new javax.swing.JButton();
+        btnProposta3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela E Dashboard");
@@ -46,14 +49,35 @@ public class TelaEComeco extends javax.swing.JFrame {
         getContentPane().add(btnPerfil);
         btnPerfil.setBounds(1000, 10, 40, 40);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(220, 0, 60, 50);
+        btnProposta0.setText("PROPOSTA");
+        btnProposta0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProposta0ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnProposta0);
+        btnProposta0.setBounds(120, 440, 130, 27);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaEComeco.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1100, 700);
+        btnProposta1.setText("PROPOSTA");
+        getContentPane().add(btnProposta1);
+        btnProposta1.setBounds(370, 440, 130, 27);
+
+        btnProposta2.setText("PROPOSTA");
+        btnProposta2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProposta2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnProposta2);
+        btnProposta2.setBounds(620, 440, 130, 27);
+
+        btnProposta3.setText("PROPOSTA");
+        getContentPane().add(btnProposta3);
+        btnProposta3.setBounds(860, 440, 130, 27);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaEComeco.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 1100, 700);
 
         pack();
         setLocationRelativeTo(null);
@@ -75,6 +99,14 @@ public class TelaEComeco extends javax.swing.JFrame {
         //função pra fechar janela anterior
             close();
     }//GEN-LAST:event_btnPerfilActionPerformed
+
+    private void btnProposta0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProposta0ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProposta0ActionPerformed
+
+    private void btnProposta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProposta2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProposta2ActionPerformed
 
     
     public static void main(String args[]) {
@@ -102,7 +134,10 @@ public class TelaEComeco extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfiguracoes;
     private javax.swing.JButton btnPerfil;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btnProposta0;
+    private javax.swing.JButton btnProposta1;
+    private javax.swing.JButton btnProposta2;
+    private javax.swing.JButton btnProposta3;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,6 +22,8 @@ public class TelaFCarteira extends javax.swing.JFrame {
         btnProjetos = new javax.swing.JToggleButton();
         btnCarteira = new javax.swing.JToggleButton();
         btnSair = new javax.swing.JButton();
+        textContaBancaria = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -74,6 +76,12 @@ public class TelaFCarteira extends javax.swing.JFrame {
         });
         getContentPane().add(btnSair);
         btnSair.setBounds(30, 610, 130, 40);
+        getContentPane().add(textContaBancaria);
+        textContaBancaria.setBounds(310, 170, 680, 40);
+
+        jButton1.setText("SALVAR");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(570, 470, 120, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaFCarteira.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -157,6 +165,8 @@ public class TelaFCarteira extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnHome;
     private javax.swing.JToggleButton btnProjetos;
     private javax.swing.JButton btnSair;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField textContaBancaria;
     // End of variables declaration//GEN-END:variables
 }

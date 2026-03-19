@@ -20,8 +20,9 @@ public class TelaFProjetos extends javax.swing.JFrame {
         btnCurriculo = new javax.swing.JToggleButton();
         btnProjetos = new javax.swing.JToggleButton();
         btnCarteira = new javax.swing.JToggleButton();
-        jTextField1 = new javax.swing.JTextField();
         btnSair = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -66,8 +67,6 @@ public class TelaFProjetos extends javax.swing.JFrame {
         });
         getContentPane().add(btnCarteira);
         btnCarteira.setBounds(30, 210, 140, 27);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(290, 400, 690, 40);
 
         btnSair.setText("SAIR");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +76,19 @@ public class TelaFProjetos extends javax.swing.JFrame {
         });
         getContentPane().add(btnSair);
         btnSair.setBounds(30, 610, 140, 40);
+
+        jTextField2.setText("Descrição do Projeto");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(280, 210, 700, 50);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o Status", "Em Andamento", "Concluido", "Pausado" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(430, 360, 340, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaFProjetos.png"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -132,6 +144,10 @@ public class TelaFProjetos extends javax.swing.JFrame {
             this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -160,7 +176,8 @@ public class TelaFProjetos extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnHome;
     private javax.swing.JToggleButton btnProjetos;
     private javax.swing.JButton btnSair;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

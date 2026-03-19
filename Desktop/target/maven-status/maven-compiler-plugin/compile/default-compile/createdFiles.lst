@@ -40,6 +40,7 @@ freelacademy\telas\TelaFreelancer$4.class
 freelacademy\telas\TelaHome$1.class
 model\Usuario.class
 freelacademy\telas\TelaEmpresa$3.class
+freelacademy\telas\TelaFProjetos$6.class
 freelacademy\telas\TelaECarteira$3.class
 freelacademy\telas\TelaEPortifolio$3.class
 freelacademy\telas\TelaCaixaEntrada$1.class
@@ -62,6 +63,7 @@ freelacademy\telas\TelaLogin.class
 freelacademy\telas\TelaLogin$5.class
 freelacademy\telas\TelaECarteira$2.class
 freelacademy\telas\TelaEComeco$1.class
+freelacademy\telas\TelaEComeco$4.class
 freelacademy\telas\TelaFCurriculo$3.class
 freelacademy\telas\TelaFProjetos$5.class
 freelacademy\telas\FreelAcademy.class
@@ -78,6 +80,7 @@ freelacademy\telas\Main.class
 freelacademy\telas\TelaBackup$1.class
 freelacademy\telas\TelaHome$2.class
 freelacademy\telas\TelaFCarteira$2.class
+freelacademy\telas\TelaFConfiguracoes$4.class
 freelacademy\telas\TelaEConfiguracoes$5.class
 freelacademy\telas\TelaEscolhe$2.class
 conexaodb\ConexaoDB.class
@@ -92,6 +95,7 @@ freelacademy\telas\TelaFHome$3.class
 freelacademy\telas\TelaFComeco$2.class
 freelacademy\telas\TelaPoliticaPrivacidade$1.class
 freelacademy\telas\TelaEHome$3.class
+freelacademy\telas\TelaEComeco$3.class
 freelacademy\telas\TelaCaixaEntrada.class
 freelacademy\telas\TelaFCurriculo$5.class
 freelacademy\telas\TelaFConfiguracoes$1.class
