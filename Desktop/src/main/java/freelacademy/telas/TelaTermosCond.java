@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde informa os Temos e Condições ao usuario 
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaTermosCond extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaTermosCond.class.getName());

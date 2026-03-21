@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde da opção do usuario realizar o Backup, quando quiser
+ * 
+ * @author Marcos Tavares
+ */
+
 import conexaodb.Backup;
 import java.util.logging.Level;
 import java.util.logging.Logger;

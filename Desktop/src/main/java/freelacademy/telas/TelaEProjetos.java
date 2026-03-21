@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe de dados adicionais do projeto
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaEProjetos extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaEProjetos.class.getName());

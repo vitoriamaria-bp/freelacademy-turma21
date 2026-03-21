@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe para dados adicionais do usuario
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaFCurriculo extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaFCurriculo.class.getName());

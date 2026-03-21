@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde permite o usuario se cadastrar ao sistema
+ * 
+ * @author Marcos Tavares
+ */
+
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

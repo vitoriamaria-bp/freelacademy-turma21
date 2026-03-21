@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde informa como o sistema funciona
+ * 
+ * @author Marcos Tavares
+ */
+
 import java.awt.Desktop;
 import java.net.URI;
 

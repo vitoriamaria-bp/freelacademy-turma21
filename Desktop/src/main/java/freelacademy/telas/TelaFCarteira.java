@@ -1,5 +1,11 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde o usuario pode visualizar pagamentos e adicionar contas 
+ * 
+ * @author Marcos Tavares
+ */
 
 public class TelaFCarteira extends javax.swing.JFrame {
     

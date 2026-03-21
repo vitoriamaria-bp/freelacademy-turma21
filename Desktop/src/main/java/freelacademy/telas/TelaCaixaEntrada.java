@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Informa passos para que o usuario possa alterar sua senha 
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaCaixaEntrada extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaCaixaEntrada.class.getName());

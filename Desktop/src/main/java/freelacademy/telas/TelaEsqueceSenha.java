@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde o usuario pode alterar a senha 
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaEsqueceSenha extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaEsqueceSenha.class.getName());

@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe com mais informação sobre como funciona o sistema 
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaComoFunciona extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaComoFunciona.class.getName());

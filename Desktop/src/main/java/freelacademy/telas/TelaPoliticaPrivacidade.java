@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde informa ao usuario as politica de privacidade do sistema
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaPoliticaPrivacidade extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPoliticaPrivacidade.class.getName());

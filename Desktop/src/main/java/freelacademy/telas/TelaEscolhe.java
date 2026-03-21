@@ -1,5 +1,11 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde o usuario deve escolher sua funlção aplicação
+ * 
+ * @author Marcos Tavares
+ */
 
 public class TelaEscolhe extends javax.swing.JFrame {
     

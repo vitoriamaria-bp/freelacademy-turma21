@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde o usuario pode visualizar pagamentos e adicionar contas 
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaECarteira extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaECarteira.class.getName());

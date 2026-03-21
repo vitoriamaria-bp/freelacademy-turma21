@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde o usuario pode ter acesso ao sistema
+ * 
+ * @author Marcos Tavares
+ */
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 

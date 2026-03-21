@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe para adicionar dados sobre o usuario
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaEmpresa extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaEmpresa.class.getName());

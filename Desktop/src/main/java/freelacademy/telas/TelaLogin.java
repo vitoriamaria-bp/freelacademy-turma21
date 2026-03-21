@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe onde o usuario deve realizar o login 
+ * 
+ * @author Marcos Tavares
+ */
+
 import conexaodb.ConexaoDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

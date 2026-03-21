@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe inicial apos login
+ * 
+ * @author Marcos Tavares
+ */
+
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;

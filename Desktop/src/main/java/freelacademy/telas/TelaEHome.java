@@ -1,5 +1,12 @@
 package freelacademy.telas;
 
+/**
+ * Descrição da classe
+ * Classe inicial das configurações do usuario 
+ * 
+ * @author Marcos Tavares
+ */
+
 public class TelaEHome extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaEHome.class.getName());
