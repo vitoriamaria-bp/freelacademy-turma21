@@ -1,5 +1,8 @@
 package freelacademy.telas;
 
+import java.awt.Desktop;
+import java.net.URI;
+
 
 public class TelaFComeco extends javax.swing.JFrame {
     
@@ -56,18 +59,38 @@ public class TelaFComeco extends javax.swing.JFrame {
         btnPerfil.setBounds(1000, 10, 40, 40);
 
         btnCandidatar0.setText("CANDIDATAR - SE");
+        btnCandidatar0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCandidatar0ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCandidatar0);
         btnCandidatar0.setBounds(120, 440, 140, 27);
 
         btnCandidatar1.setText("CANDIDATAR - SE");
+        btnCandidatar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCandidatar1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCandidatar1);
         btnCandidatar1.setBounds(360, 440, 140, 27);
 
         btnCandidatar2.setText("CANDIDATAR - SE");
+        btnCandidatar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCandidatar2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCandidatar2);
         btnCandidatar2.setBounds(610, 440, 140, 27);
 
         btnCandidatar3.setText("CANDIDATAR - SE");
+        btnCandidatar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCandidatar3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCandidatar3);
         btnCandidatar3.setBounds(850, 440, 140, 27);
 
@@ -101,6 +124,38 @@ public class TelaFComeco extends javax.swing.JFrame {
         //função pra fechar janela anterior
             this.dispose();
     }//GEN-LAST:event_btnPerfilActionPerformed
+
+    private void btnCandidatar0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCandidatar0ActionPerformed
+        try{
+            Desktop.getDesktop().browse(new URI("http://127.0.0.1:8000/"));
+        }
+        catch(Exception e)
+        {}
+    }//GEN-LAST:event_btnCandidatar0ActionPerformed
+
+    private void btnCandidatar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCandidatar1ActionPerformed
+        try{
+            Desktop.getDesktop().browse(new URI("http://127.0.0.1:8000/"));
+        }
+        catch(Exception e)
+        {}
+    }//GEN-LAST:event_btnCandidatar1ActionPerformed
+
+    private void btnCandidatar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCandidatar2ActionPerformed
+        try{
+            Desktop.getDesktop().browse(new URI("http://127.0.0.1:8000/"));
+        }
+        catch(Exception e)
+        {}
+    }//GEN-LAST:event_btnCandidatar2ActionPerformed
+
+    private void btnCandidatar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCandidatar3ActionPerformed
+        try{
+            Desktop.getDesktop().browse(new URI("http://127.0.0.1:8000/"));
+        }
+        catch(Exception e)
+        {}
+    }//GEN-LAST:event_btnCandidatar3ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

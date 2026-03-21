@@ -24,7 +24,6 @@ public class TelaBackup extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Backup");
         setMinimumSize(new java.awt.Dimension(450, 280));
-        setPreferredSize(new java.awt.Dimension(450, 280));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -35,7 +34,7 @@ public class TelaBackup extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnBackup);
-        btnBackup.setBounds(150, 150, 130, 40);
+        btnBackup.setBounds(260, 170, 130, 40);
         getContentPane().add(txtMensagem);
         txtMensagem.setBounds(77, 230, 280, 0);
 
@@ -46,7 +45,7 @@ public class TelaBackup extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVoltar);
-        btnVoltar.setBounds(180, 210, 75, 23);
+        btnVoltar.setBounds(60, 170, 130, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaBackup.png"))); // NOI18N
         getContentPane().add(jLabel1);

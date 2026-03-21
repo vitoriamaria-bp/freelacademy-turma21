@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Painel Cliente | FreelAcademy{% endblock %}
+
+{% block content %}
+    <div class="dashboard-hero">
+        <div class="hero-text">
+            <h2>Central de Projetos</h2>
+            <p>Você tem <strong>{{ projetos.count }} projetos</strong> cadastrados no sistema.</p>
+        </div>
+        <div>
+            <a href="{% url 'criar_projeto' %}" class="btn-action-hero"><i class="fas fa-plus"></i> Publicar Projeto</a>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card card-blue"><div class="stat-icon icon-blue"><i class="fas fa-layer-group"></i></div><div class="stat-data"><p>Projetos Ativos</p><h3>{{ projetos.count }}</h3></div></div>
+        <div class="stat-card card-purple"><div class="stat-icon icon-purple"><i class="fas fa-file-contract"></i></div><div class="stat-data"><p>Propostas</p><h3>0</h3></div></div>
+        <div class="stat-card card-green"><div class="stat-icon icon-green"><i class="fas fa-check-circle"></i></div><div class="stat-data"><p>Concluídos</p><h3>0</h3></div></div>
+        <div class="stat-card card-orange"><div class="stat-icon icon-orange"><i class="fas fa-lock"></i></div><div class="stat-data"><p>Em Custódia</p><h3>R$ 0,00</h3></div></div>
+    </div>
+
+    <div class="table-box">
+        <div class="table-header">
+            <h3>Atividades Recentes</h3>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 35%;">Projeto</th>
+                    <th style="width: 25%;">Valores e Prazo</th>
+                    <th style="width: 20%;">Status</th>
+                    <th style="width: 20%; text-align: right;">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for projeto in projetos %}
+                <tr class="row-item">
+                    <td>
+                        <div style="display: flex; align-items: center;">
+                            <div class="cat-icon cat-dev"><i class="fas fa-briefcase"></i></div>
+                            <div class="project-info">
+                                <a href="#" class="project-title" style="text-decoration: none;">{{ projeto.titulo }}</a>
+                                <span class="project-cat">Criado em: {{ projeto.data_criacao|date:"d/m/Y" }}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="proposal-count">
+                            <strong style="color: var(--primary);">R$ {{ projeto.orcamento }}</strong><br>
+                            <span style="font-size: 0.85rem; color: #666;">Entrega: {{ projeto.prazo|date:"d/m/Y" }}</span>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-active">{{ projeto.get_status_display }}</span></td>
+                    <td style="text-align: right;">
+                        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                            <a href="#" class="btn-manage">Ver</a>
+                            <a href="{% url 'deletar_projeto' projeto.pk %}" class="btn-manage" style="background: #fff0f0; border-color: #ffcccc; color: #d93025;" onclick="return confirm('Tem certeza que deseja apagar o projeto?');">Apagar</a>
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" style="text-align: center; padding: 40px; color: #888;">Você ainda não publicou nenhum projeto.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

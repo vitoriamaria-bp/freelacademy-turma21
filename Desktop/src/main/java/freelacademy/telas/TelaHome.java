@@ -57,7 +57,7 @@ public class TelaHome extends javax.swing.JFrame {
         getContentPane().add(btnPoliticaPrivacidade);
         btnPoliticaPrivacidade.setBounds(480, 10, 170, 30);
 
-        btnTermosCond.setText("Termos e Condições de Uso");
+        btnTermosCond.setText("Termos e Cond. de Uso");
         btnTermosCond.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTermosCondActionPerformed(evt);

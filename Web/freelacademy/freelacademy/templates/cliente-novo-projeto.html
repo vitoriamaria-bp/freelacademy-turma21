@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Publicar Projeto | FreelAcademy{% endblock %}
+
+{% block content %}
+    <div class="form-wrapper">
+        <div style="margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between;">
+            <h2 style="color: var(--primary); margin: 0;">Publicar Novo Projeto</h2>
+            <a href="{% url 'cliente_home' %}" style="color: #888; text-decoration: none; font-size: 0.9rem; font-weight: 600;"><i class="fas fa-arrow-left"></i> Voltar</a>
+        </div>
+        
+        <form class="form-card" method="POST" action="{% url 'criar_projeto' %}">
+            {% csrf_token %}
+            
+            <h3 class="form-section-title"><i class="fas fa-info-circle"></i> Detalhes do Projeto</h3>
+            <div class="form-grid">
+                <div class="full-width">
+                    <label class="dash-label">Nome do Projeto</label>
+                    <input type="text" name="titulo" class="dash-input" placeholder="Ex: E-commerce para Loja de Roupas" required>
+                </div>
+                <div>
+                    <label class="dash-label">Categoria (Apenas Visual)</label>
+                    <select class="dash-select">
+                        <option>Selecione...</option>
+                        <option>Desenvolvimento & TI</option>
+                        <option>Design</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="dash-label">Prazo de Entrega (Exato)</label>
+                    <input type="date" name="prazo" class="dash-input" required>
+                </div>
+                <div class="full-width">
+                    <label class="dash-label">Descrição Completa</label>
+                    <textarea name="descricao" class="dash-textarea" placeholder="Descreva detalhadamente o que precisas..." required></textarea>
+                </div>
+            </div>
+            
+            <h3 class="form-section-title"><i class="fas fa-wallet"></i> Orçamento</h3>
+            <div style="margin-bottom: 30px;">
+                <label class="dash-label">Defina o valor do orçamento (R$)</label>
+                <input type="number" step="0.01" name="orcamento" class="dash-input" placeholder="Ex: 1500.00" required>
+            </div>
+            
+            <div class="form-actions">
+                <a href="{% url 'cliente_home' %}" class="btn-cancel">Cancelar</a>
+                <button type="submit" class="btn-publish">Publicar Agora</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

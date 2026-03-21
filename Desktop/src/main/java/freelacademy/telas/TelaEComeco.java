@@ -1,5 +1,11 @@
 package freelacademy.telas;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import javax.swing.JOptionPane;
+
 public class TelaEComeco extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaEComeco.class.getName());
@@ -7,6 +13,7 @@ public class TelaEComeco extends javax.swing.JFrame {
     
     public TelaEComeco() {
         initComponents();
+     
     }
 
     public void close(){
@@ -59,6 +66,11 @@ public class TelaEComeco extends javax.swing.JFrame {
         btnProposta0.setBounds(120, 440, 130, 27);
 
         btnProposta1.setText("PROPOSTA");
+        btnProposta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProposta1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnProposta1);
         btnProposta1.setBounds(370, 440, 130, 27);
 
@@ -72,6 +84,11 @@ public class TelaEComeco extends javax.swing.JFrame {
         btnProposta2.setBounds(620, 440, 130, 27);
 
         btnProposta3.setText("PROPOSTA");
+        btnProposta3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProposta3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnProposta3);
         btnProposta3.setBounds(860, 440, 130, 27);
 
@@ -101,12 +118,36 @@ public class TelaEComeco extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPerfilActionPerformed
 
     private void btnProposta0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProposta0ActionPerformed
-        // TODO add your handling code here:
+        try{
+            Desktop.getDesktop().browse(new URI("http://127.0.0.1:8000/"));
+        }
+        catch(Exception e)
+        {}
     }//GEN-LAST:event_btnProposta0ActionPerformed
 
     private void btnProposta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProposta2ActionPerformed
-        // TODO add your handling code here:
+        try{
+            Desktop.getDesktop().browse(new URI("http://127.0.0.1:8000/"));
+        }
+        catch(Exception e)
+        {}
     }//GEN-LAST:event_btnProposta2ActionPerformed
+
+    private void btnProposta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProposta1ActionPerformed
+        try{
+            Desktop.getDesktop().browse(new URI("http://127.0.0.1:8000/"));
+        }
+        catch(Exception e)
+        {}
+    }//GEN-LAST:event_btnProposta1ActionPerformed
+
+    private void btnProposta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProposta3ActionPerformed
+        try{
+            Desktop.getDesktop().browse(new URI("http://127.0.0.1:8000/"));
+        }
+        catch(Exception e)
+        {}
+    }//GEN-LAST:event_btnProposta3ActionPerformed
 
     
     public static void main(String args[]) {
