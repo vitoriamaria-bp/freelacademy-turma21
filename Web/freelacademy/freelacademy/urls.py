@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
@@ -6,6 +8,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('login/', views.login_view, name='login'),
     path('cadastro/', views.cadastro, name='cadastro'),
+    path('logout/', views.logout_view, name='logout_view'),
     path('recuperar-senha/', views.recuperar_senha, name='recuperar_senha'),
     path('planos/', views.planos, name='planos'),
     path('projetos/', views.projetos, name='projetos'),
@@ -35,4 +38,12 @@ urlpatterns = [
     path('freelancer/configuracoes/', views.freelancer_configuracoes, name='freelancer_configuracoes'),
     path('freelancer/detalhes-projeto/', views.freelancer_detalhes_projeto, name='freelancer_detalhes_projeto'),
     path('freelancer/portfolio/', views.freelancer_portfolio, name='freelancer_portfolio'),
+
+    # --- Ações de Projeto, Propostas e Notificações ---
+    path('projeto/<int:projeto_id>/proposta/', views.enviar_proposta, name='enviar_proposta'),
+    path('proposta/aceitar/<int:proposta_id>/', views.aceitar_proposta, name='aceitar_proposta'),
+    path('notificacoes/', views.ler_notificacoes, name='ler_notificacoes'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

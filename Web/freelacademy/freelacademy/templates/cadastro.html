@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{% static 'css/auth.css' %}">
 </head>
 <body>
-
     <div class="auth-page">
         <div class="auth-bg-image"></div>
         <div class="auth-overlay"></div>
@@ -18,39 +17,49 @@
         <div class="auth-box">
             <div class="auth-header">
                 <a href="{% url 'index' %}" class="logo-auth">
-                    <span>Fr<span style="color: var(--secondary);">ee</span>lacademy</span>
-                    <img src="{% static 'img/logo-passaro-original.svg' %}" alt="Pássaro">
+                    <span>Fr<span style="color: var(--secondary);">ee</span>lAcademy</span>
+                    <img src="{% static 'img/logo-passaro-original.svg' %}" alt="Pássaro FreelAcademy">
                 </a>
-                <p>Crie sua conta gratuita e segura.</p>
+                <p>Crie sua conta segura.</p>
             </div>
 
             {% if messages %}
-                <div style="margin-bottom: 20px;">
+                <div id="msg-container" style="margin-bottom: 20px;">
                     {% for message in messages %}
-                        <div style="padding: 10px; border-radius: 4px; color: white; background-color: {% if message.tags == 'error' %}#d93025{% else %}#1e8e3e{% endif %}; font-size: 0.9rem;">
+                        <div style="padding: 12px; border-radius: 4px; color: white; text-align: center; font-size: 0.9rem; background-color: {% if message.tags == 'error' %}#d93025{% else %}#1e8e3e{% endif %};">
                             {{ message }}
                         </div>
                     {% endfor %}
                 </div>
+                <script>
+                    setTimeout(function() {
+                        const container = document.getElementById('msg-container');
+                        if (container) {
+                            container.style.transition = "opacity 0.6s ease";
+                            container.style.opacity = "0";
+                            setTimeout(() => container.remove(), 600);
+                        }
+                    }, 4000);
+                </script>
             {% endif %}
 
             <form id="formCadastroDjango" method="POST" action="{% url 'cadastro' %}">
                 {% csrf_token %}
                 
-                <label class="form-label">Eu quero:</label>
-                <div class="type-selector">
+                <label class="form-label">Eu sou:</label>
+                <div class="type-selector" style="margin-bottom: 20px;">
                     <label class="type-option">
                         <input type="radio" name="perfil" value="freelancer" checked>
                         <div class="type-box">
                             <i class="fas fa-laptop-code"></i>
-                            <span>Trabalhar</span>
+                            <span>Freelancer</span>
                         </div>
                     </label>
                     <label class="type-option">
                         <input type="radio" name="perfil" value="cliente">
                         <div class="type-box">
                             <i class="fas fa-briefcase"></i>
-                            <span>Contratar</span>
+                            <span>Cliente</span>
                         </div>
                     </label>
                 </div>
@@ -77,22 +86,27 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">Senha de Acesso</label>
+                    <label class="form-label">Senha</label>
                     <input type="password" name="senha" class="form-input" placeholder="Mínimo 8 caracteres" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Confirmar Senha</label>
+                    <input type="password" name="senha_confirma" class="form-input" placeholder="Repita sua senha" required>
                 </div>
 
                 <div class="check-wrapper">
                     <input type="checkbox" name="lgpd" required id="lgpd-check">
                     <label for="lgpd-check">
-                        Li e concordo com o processamento dos meus dados conforme os <a href="{% url 'termos' %}" target="_blank">Termos de Uso</a> e a <a href="{% url 'privacidade' %}" target="_blank">Política de Privacidade</a>.
+                        Li e concordo com os <a href="{% url 'termos' %}" target="_blank">Termos</a>.
                     </label>
                 </div>
 
-                <button type="submit" class="btn-submit">Criar Conta Segura</button>
+                <button type="submit" class="btn-submit" style="margin-top: 10px;">Finalizar Cadastro</button>
             </form>
 
             <div class="auth-footer">
-                Já tem cadastro? <a href="{% url 'login' %}">Fazer Login</a>
+                Já tem conta? <a href="{% url 'login' %}">Entrar</a>
             </div>
         </div>
     </div>

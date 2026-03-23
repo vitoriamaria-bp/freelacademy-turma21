@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{% static 'css/auth.css' %}">
 </head>
 <body>
-
     <div class="auth-page">
         <div class="auth-bg-image"></div>
         <div class="auth-overlay"></div>
@@ -25,19 +24,29 @@
             </div>
 
             {% if messages %}
-                <div style="margin-bottom: 20px;">
+                <div id="login-msg-box" style="margin-bottom: 20px;">
                     {% for message in messages %}
-                        <div style="padding: 10px; border-radius: 4px; color: white; background-color: {{ bg_color }}; font-size: 0.9rem;">
-                        {{ message }}
+                        <div style="padding: 12px; border-radius: 4px; color: white; text-align: center; font-size: 0.9rem; background-color: {% if message.tags == 'error' %}#d93025{% else %}#1e8e3e{% endif %};">
+                            {{ message }}
                         </div>
                     {% endfor %}
                 </div>
+                <script>
+                    setTimeout(function() {
+                        const box = document.getElementById('login-msg-box');
+                        if (box) {
+                            box.style.transition = "opacity 0.6s ease";
+                            box.style.opacity = "0";
+                            setTimeout(() => box.remove(), 600);
+                        }
+                    }, 4000);
+                </script>
             {% endif %}
 
             <form id="formLoginDjango" method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
                 
-                <label class="form-label">Acessar como:</label>
+                <label class="form-label">Eu sou:</label>
                 <div class="type-selector" style="margin-bottom: 20px;">
                     <label class="type-option">
                         <input type="radio" name="tipoAcesso" value="freelancer" checked>
@@ -73,7 +82,7 @@
                     <a href="{% url 'recuperar_senha' %}" style="font-size: 0.9rem; color: var(--secondary); text-decoration: none; font-weight: 600;">Esqueci a senha</a>
                 </div>
 
-                <button type="submit" class="btn-submit" style="margin-top: 10px;">Entrar Segurança SSL</button>
+                <button type="submit" class="btn-submit" style="margin-top: 10px;">Entrar</button>
             </form>
 
             <div class="auth-footer">

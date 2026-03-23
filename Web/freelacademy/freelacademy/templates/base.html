@@ -19,11 +19,35 @@
                 <span>Fr<span style="color: var(--secondary);">ee</span>lAcademy</span>
             </a>
         </div>
+        
         <div class="top-bar-right">
-            <button class="notification-btn"><i class="far fa-bell"></i><span class="notification-badge"></span></button>
-            <div class="user-menu" tabindex="0">
+            
+            <div class="notif-wrapper">
+                <button class="notif-premium-btn" id="notifBtn">
+                    <i class="far fa-bell"></i>
+                    {% if qtd_notificacoes > 0 %}
+                        <span class="notification-badge">{{ qtd_notificacoes }}</span>
+                    {% endif %}
+                </button>
+                
+                <div class="notif-dropdown" id="notifDropdown">
+                    <div class="notif-header">Notificações</div>
+                    {% if recentes %}
+                        {% for notif in recentes %}
+                            <a href="{% if notif.link %}{{ notif.link }}{% else %}#{% endif %}" class="notif-item {% if not notif.lida %}unread{% endif %}">
+                                {{ notif.mensagem }}
+                            </a>
+                        {% endfor %}
+                        <a href="{% url 'ler_notificacoes' %}" class="notif-footer">Marcar como lidas</a>
+                    {% else %}
+                        <div class="notif-empty">Nenhuma notificação nova</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="user-menu">
                 {% if request.user.foto_perfil %}
-                    <img src="{{ request.user.foto_perfil.url }}" class="user-avatar" style="object-fit: cover;" alt="Avatar">
+                    <img src="{{ request.user.foto_perfil.url }}" class="user-avatar" alt="Avatar">
                 {% else %}
                     <img src="https://ui-avatars.com/api/?name={{ request.user.first_name }}+{{ request.user.last_name }}&background=025959&color=fff" class="user-avatar" alt="Avatar">
                 {% endif %}
@@ -31,7 +55,6 @@
                     <span class="user-name">{{ request.user.first_name|title|default:request.user.username }}</span>
                     <span class="user-role">{{ request.user.tipo|title }}</span>
                 </div>
-                <i class="fas fa-chevron-down" style="font-size: 0.8rem; color: #ccc; margin-left: 5px;"></i>
             </div>
         </div>
     </header>
@@ -59,12 +82,14 @@
                     <li><a href="{% if request.user.tipo == 'cliente' %}{% url 'cliente_configuracoes' %}{% else %}{% url 'freelancer_configuracoes' %}{% endif %}"><i class="fas fa-cog"></i> <span>Configurações</span></a></li>
                 </ul>
             </nav>
+            
             <div class="sidebar-footer">
                 <a href="{% url 'faq' %}" class="footer-link"><i class="far fa-question-circle"></i> <span>Ajuda</span></a>
-                <a href="{% url 'login' %}" class="footer-link" style="color: #ff8a8a; margin-top: 15px;">
+                <a href="{% url 'logout_view' %}" class="footer-link logout-link">
                     <i class="fas fa-sign-out-alt"></i> <span>Sair</span>
                 </a>
             </div>
+
         </aside>
 
         <main class="main-content" id="mainContent">
@@ -72,6 +97,7 @@
             {% endblock %}
         </main>
     </div>
+
     <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>

@@ -4,8 +4,14 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=yl^37ua94un3t*l()so%ls4=3x!6_6k%f4+#bdbcr_feru3jt'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.githubpreview.dev',
+    'https://*.app.github.dev',
+    'http://127.0.0.1:8000',
+    'https://localhost:8000',
+]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +45,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'freelacademy.views.injetar_notificacoes',
             ],
         },
     },
