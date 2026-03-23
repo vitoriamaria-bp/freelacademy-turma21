@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Perfil de {{ freela.first_name }} | FreelAcademy{% endblock %}
+
+{% block content %}
+<div class="dashboard-hero">
+    <div class="hero-text">
+        <h2>Perfil Profissional</h2>
+        <p>Conheça mais sobre <strong>{{ freela.first_name }}</strong></p>
+    </div>
+    <a href="javascript:history.back()" class="btn-action-hero" style="background: #fff; color: var(--primary); text-decoration: none;"><i class="fas fa-arrow-left"></i> Voltar</a>
+</div>
+
+<div class="form-wrapper" style="margin-top: 30px;">
+    <div class="form-card" style="display: flex; gap: 40px; align-items: flex-start;">
+        <div style="text-align: center;">
+            {% if freela.foto_perfil %}
+                <img src="{{ freela.foto_perfil.url }}" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid #f0faff; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            {% else %}
+                <div style="width: 150px; height: 150px; border-radius: 50%; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #ccc;">
+                    <i class="fas fa-user"></i>
+                </div>
+            {% endif %}
+            <div style="margin-top: 15px;">
+                <span style="color: #f1c40f;"><i class="fas fa-star"></i> {{ freela.avaliacao_media }}</span>
+            </div>
+        </div>
+
+        <div style="flex: 1;">
+            <h2 style="color: var(--primary); margin-bottom: 10px;">{{ freela.first_name }} {{ freela.last_name }}</h2>
+            <p style="color: var(--secondary); font-weight: bold; margin-bottom: 20px;">{{ freela.tipo|title }}</p>
+            
+            <h4 style="color: #333; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Biografia</h4>
+            <p style="color: #666; line-height: 1.6;">
+                {{ freela.descricao|default:"O profissional ainda não preencheu sua biografia." }}
+            </p>
+
+            <div style="margin-top: 30px; display: flex; gap: 15px;">
+                <a href="{% url 'cliente_chat' %}" class="btn-publish" style="text-decoration: none;"><i class="fas fa-comments"></i> Iniciar Conversa</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -4,6 +4,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=yl^37ua94un3t*l()so%ls4=3x!6_6k%f4+#bdbcr_feru3jt'
 DEBUG = True
+
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [

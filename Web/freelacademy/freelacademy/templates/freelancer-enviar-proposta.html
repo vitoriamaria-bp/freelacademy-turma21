@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Enviar Proposta | FreelAcademy{% endblock %}
+
+{% block content %}
+<div class="dashboard-hero">
+    <div class="hero-text">
+        <h2>Enviar Proposta</h2>
+        <p>Projeto: <strong>{{ projeto.titulo }}</strong></p>
+    </div>
+</div>
+
+<div class="form-wrapper" style="margin-top: 20px;">
+    <form class="form-card" method="POST">
+        {% csrf_token %}
+        <div class="form-section-title"><i class="fas fa-paper-plane"></i> Sua Oferta</div>
+        
+        <div class="form-grid">
+            <div>
+                <label class="dash-label">Valor que deseja cobrar (R$)</label>
+                {{ form.valor_cobrado }}
+            </div>
+            <div>
+                <label class="dash-label">Prazo de entrega estimado</label>
+                {{ form.prazo_estimado }}
+            </div>
+            <div class="full-width">
+                <label class="dash-label">Sua Mensagem / Proposta</label>
+                {{ form.mensagem }}
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <a href="{% url 'freelancer_buscar_projetos' %}" class="btn-cancel">Voltar</a>
+            <button type="submit" class="btn-publish">Enviar Proposta</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

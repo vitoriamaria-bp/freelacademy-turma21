@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Área Financeira | FreelAcademy{% endblock %}
+
 {% block content %}
     <div class="dashboard-hero">
         <div class="hero-text">
@@ -7,8 +8,44 @@
             <p>Acompanhe a sua carteira, fundos em custódia e histórico de transações.</p>
         </div>
     </div>
+
     <div class="stats-grid" style="margin-top: 20px;">
-        <div class="stat-card card-green"><div class="stat-icon icon-green"><i class="fas fa-wallet"></i></div><div class="stat-data"><p>Saldo Disponível</p><h3>R$ 0,00</h3></div></div>
-        <div class="stat-card card-blue"><div class="stat-icon icon-blue"><i class="fas fa-lock"></i></div><div class="stat-data"><p>Em Custódia</p><h3>R$ 0,00</h3></div></div>
+        <div class="stat-card card-green">
+            <div class="stat-icon icon-green"><i class="fas fa-wallet"></i></div>
+            <div class="stat-data">
+                <p>Saldo Disponível</p>
+                <h3>R$ {{ request.user.saldo|floatformat:2 }}</h3>
+            </div>
+        </div>
+        <div class="stat-card card-blue">
+            <div class="stat-icon icon-blue"><i class="fas fa-lock"></i></div>
+            <div class="stat-data">
+                <p>Em Custódia</p>
+                <h3>R$ {{ em_custodia|floatformat:2 }}</h3>
+            </div>
+        </div>
     </div>
+
+    <div class="form-wrapper" style="margin-top: 30px;">
+        <form class="form-card" method="POST" action="{% url 'cliente_financeiro' %}" style="max-width: 500px;">
+            {% csrf_token %}
+            <h3 style="color: var(--primary); margin-bottom: 20px;"><i class="fas fa-plus-circle"></i> Adicionar Saldo</h3>
+            <div class="form-group">
+                <label class="dash-label">Valor do Depósito (R$)</label>
+                <input type="text" name="valor" class="dash-input" placeholder="Ex: 500,00" required pattern="[0-9.,]+" title="Use apenas números, ponto ou vírgula.">
+            </div>
+            <button type="submit" class="btn-publish" style="margin-top: 15px; width: 100%;">Depositar Agora</button>
+        </form>
+    </div>
+
+    {% if messages %}
+        <div style="margin-top: 20px;">
+            {% for message in messages %}
+                <div style="padding: 15px; border-radius: 8px; color: white; background-color: {% if message.tags == 'error' %}#d93025{% else %}#2ecc71{% endif %};">
+                    <i class="fas {% if message.tags == 'error' %}fa-exclamation-circle{% else %}fa-check-circle{% endif %}"></i> {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
 {% endblock %}

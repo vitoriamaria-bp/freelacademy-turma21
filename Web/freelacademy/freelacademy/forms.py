@@ -6,13 +6,18 @@ class ProjetoForm(forms.ModelForm):
         model = Projeto
         fields = ['titulo', 'descricao', 'orcamento', 'prazo']
         widgets = {
-            'prazo': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
-            'titulo': forms.TextInput(attrs={'class': 'form-control'}),
-            'descricao': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
-            'orcamento': forms.NumberInput(attrs={'class': 'form-control'}),
+            'prazo': forms.DateInput(attrs={'type': 'date', 'class': 'dash-input'}),
+            'titulo': forms.TextInput(attrs={'class': 'dash-input', 'placeholder': 'Ex: Criação de Logo'}),
+            'descricao': forms.Textarea(attrs={'class': 'dash-textarea', 'rows': 4, 'placeholder': 'Descreva os detalhes...'}),
+            'orcamento': forms.NumberInput(attrs={'class': 'dash-input', 'placeholder': '0.00'}),
         }
-# NOVO: Formulário para o Freelancer
+
 class PropostaForm(forms.ModelForm):
     class Meta:
         model = Proposta
         fields = ['valor_cobrado', 'prazo_estimado', 'mensagem']
+        widgets = {
+            'valor_cobrado': forms.NumberInput(attrs={'class': 'dash-input', 'step': '0.01'}),
+            'prazo_estimado': forms.TextInput(attrs={'class': 'dash-input', 'placeholder': 'Ex: 5 dias'}),
+            'mensagem': forms.Textarea(attrs={'class': 'dash-textarea', 'rows': 4, 'placeholder': 'Apresente-se para o cliente...'}),
+        }

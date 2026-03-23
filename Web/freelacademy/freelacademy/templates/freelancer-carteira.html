@@ -1,14 +1,65 @@
 {% extends 'base.html' %}
-{% block title %}Área Financeira | FreelAcademy{% endblock %}
+{% block title %}Minha Carteira | FreelAcademy{% endblock %}
+
 {% block content %}
     <div class="dashboard-hero">
         <div class="hero-text">
-            <h2>Área Financeira</h2>
-            <p>Acompanhe a sua carteira, fundos em custódia e histórico de transações.</p>
+            <h2>Minha Carteira</h2>
+            <p>Gerencie seus ganhos e solicite saques dos seus projetos concluídos.</p>
         </div>
     </div>
+
     <div class="stats-grid" style="margin-top: 20px;">
-        <div class="stat-card card-green"><div class="stat-icon icon-green"><i class="fas fa-wallet"></i></div><div class="stat-data"><p>Saldo Disponível</p><h3>R$ 0,00</h3></div></div>
-        <div class="stat-card card-blue"><div class="stat-icon icon-blue"><i class="fas fa-lock"></i></div><div class="stat-data"><p>Em Custódia</p><h3>R$ 0,00</h3></div></div>
+        <div class="stat-card card-green">
+            <div class="stat-icon icon-green"><i class="fas fa-hand-holding-usd"></i></div>
+            <div class="stat-data">
+                <p>Saldo para Saque</p>
+                <h3>R$ {{ request.user.saldo|floatformat:2 }}</h3>
+            </div>
+        </div>
+        <div class="stat-card card-orange">
+            <div class="stat-icon icon-orange"><i class="fas fa-hourglass-half"></i></div>
+            <div class="stat-data">
+                <p>Aguardando Liberação</p>
+                <h3>R$ 0,00</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-box" style="margin-top: 30px;">
+        <div class="table-header"><h3>Histórico de Recebimentos</h3></div>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="text-align: left; border-bottom: 1px solid #eee;">
+                    <th style="padding: 15px;">Ação</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 20px 15px;">
+                        <button id="btnSacarSimulacao" class="btn-publish" style="background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                            <i class="fas fa-money-bill-wave"></i> Sacar Dinheiro
+                        </button>
+                    </td>
+                    <td style="color: #666;">
+                        O dinheiro que você recebe dos clientes fica acumulado aqui.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modalSaque" class="modal-overlay">
+        <div class="modal-content">
+            <i class="fas fa-check-circle modal-icon"></i>
+            <h3>Saque Solicitado!</h3>
+            <p>
+                Uma transferência PIX no valor de <strong>R$ {{ request.user.saldo|floatformat:2 }}</strong> foi iniciada para a sua conta bancária.
+            </p>
+            <button id="btnFecharModal" class="btn-publish">
+                Perfeito, fechar
+            </button>
+        </div>
     </div>
 {% endblock %}

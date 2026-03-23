@@ -38,10 +38,12 @@ urlpatterns = [
     path('freelancer/configuracoes/', views.freelancer_configuracoes, name='freelancer_configuracoes'),
     path('freelancer/detalhes-projeto/', views.freelancer_detalhes_projeto, name='freelancer_detalhes_projeto'),
     path('freelancer/portfolio/', views.freelancer_portfolio, name='freelancer_portfolio'),
+    path('freelancer/perfil/<int:freelancer_id>/', views.ver_perfil_freelancer, name='ver_perfil_freelancer'),
 
-    # --- Ações de Projeto, Propostas e Notificações ---
+    # --- Ações ---
     path('projeto/<int:projeto_id>/proposta/', views.enviar_proposta, name='enviar_proposta'),
     path('proposta/aceitar/<int:proposta_id>/', views.aceitar_proposta, name='aceitar_proposta'),
+    path('projeto/finalizar/<int:projeto_id>/', views.finalizar_projeto, name='finalizar_projeto'),
     path('notificacoes/', views.ler_notificacoes, name='ler_notificacoes'),
 ]
 

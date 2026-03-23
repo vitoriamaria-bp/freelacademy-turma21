@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 4. VALIDAÇÃO DE CADASTRO (18 ANOS) ---
-    // (Nota: Mantido original. Se você estiver usando o formulário renderizado pelo Django, esta função via JS puro pode não ser chamada, mas não atrapalha).
     const formCadastro = document.getElementById('formCadastro');
     if (formCadastro) {
         formCadastro.addEventListener('submit', function(event) {
@@ -121,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 6. VALIDAÇÃO E REDIRECIONAMENTO DE LOGIN ---
-    // (Nota: Mantido original para páginas estáticas, o Django usa o ID formLoginDjango que te enviei antes, então eles não entram em conflito).
     const formLogin = document.getElementById('formLogin');
     if (formLogin) {
         formLogin.addEventListener('submit', function(event) {
@@ -144,13 +142,102 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const email = document.getElementById('emailRecuperacao').value;
             
-            // Simula o disparo de e-mail e volta pro login
             alert(`As instruções de recuperação foram enviadas para:\n${email}\n\nVerifique sua caixa de entrada e a pasta de spam.`);
             window.location.href = "login.html";
         });
     }
+
+    // --- 8. MÁSCARAS AUTOMÁTICAS (CPF/CNPJ, TELEFONE E DINHEIRO) ---
+    
+    // 8.1 Máscara de CPF e CNPJ
+    const inputCpfCnpj = document.querySelector('input[name="cpf_cnpj"]');
+    if (inputCpfCnpj) {
+        inputCpfCnpj.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, ''); 
+            
+            if (value.length <= 11) { 
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            } else { 
+                value = value.substring(0, 14); 
+                value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+                value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+                value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+                value = value.replace(/(\d{4})(\d)/, '$1-$2');
+            }
+            e.target.value = value;
+        });
+    }
+
+    // 8.2 Máscara de Telefone (Fixo ou Celular)
+    const inputTelefone = document.querySelector('input[name="telefone"]');
+    if (inputTelefone) {
+        inputTelefone.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.substring(0, 11); 
+            
+            if (value.length > 2) {
+                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+            }
+            if (value.length > 9) { 
+                value = value.replace(/(\d{5})(\d)/, '$1-$2');
+            } else if (value.length > 8) { 
+                value = value.replace(/(\d{4})(\d)/, '$1-$2');
+            }
+            e.target.value = value;
+        });
+    }
+
+    // 8.3 Máscara de Dinheiro (Financeiro / Orçamento / Proposta)
+    const inputsDinheiro = document.querySelectorAll('input[name="valor"], input[name="orcamento"], input[name="valor_cobrado"]');
+    inputsDinheiro.forEach(input => {
+        if (input.type === 'number') {
+            input.type = 'text';
+        }
+        
+        input.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, ''); 
+            if (value === '') {
+                e.target.value = '';
+                return;
+            }
+            
+            value = (parseInt(value) / 100).toFixed(2) + '';
+            value = value.replace('.', ','); 
+            value = value.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.'); 
+            
+            e.target.value = value;
+        });
+    });
+
+    // --- 9. MODAL DE SAQUE (CARTEIRA FREELANCER) ---
+    const btnSacar = document.getElementById('btnSacarSimulacao');
+    const modalSaque = document.getElementById('modalSaque');
+    const btnFecharModal = document.getElementById('btnFecharModal');
+
+    if (btnSacar && modalSaque && btnFecharModal) {
+        // Abre o modal
+        btnSacar.addEventListener('click', () => {
+            modalSaque.style.display = 'flex';
+        });
+
+        // Fecha o modal no botão
+        btnFecharModal.addEventListener('click', () => {
+            modalSaque.style.display = 'none';
+        });
+
+        // Fecha o modal clicando fora dele (no fundo escuro)
+        modalSaque.addEventListener('click', (e) => {
+            if (e.target === modalSaque) {
+                modalSaque.style.display = 'none';
+            }
+        });
+    }
+
 });
 
+// --- FUNÇÕES GLOBAIS ---
 function validarIdade(dataNascimento) {
     const hoje = new Date();
     const dataNasc = new Date(dataNascimento);
