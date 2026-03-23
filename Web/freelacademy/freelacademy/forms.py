@@ -1,5 +1,5 @@
 from django import forms
-from .models import Projeto
+from .models import Projeto, Proposta
 
 class ProjetoForm(forms.ModelForm):
     class Meta:
@@ -11,3 +11,8 @@ class ProjetoForm(forms.ModelForm):
             'descricao': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
             'orcamento': forms.NumberInput(attrs={'class': 'form-control'}),
         }
+# NOVO: Formulário para o Freelancer
+class PropostaForm(forms.ModelForm):
+    class Meta:
+        model = Proposta
+        fields = ['valor_cobrado', 'prazo_estimado', 'mensagem']

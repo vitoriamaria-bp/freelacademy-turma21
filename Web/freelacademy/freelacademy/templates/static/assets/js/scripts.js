@@ -32,6 +32,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 2.1 DEVOLVE A COR AO MENU LATERAL (Aba Ativa do Django) ---
+    const currentUrl = window.location.pathname;
+    const menuLinks = document.querySelectorAll('.sidebar-menu a');
+    
+    menuLinks.forEach(link => {
+        if (link.getAttribute('href') === currentUrl) {
+            link.parentElement.classList.add('active'); 
+        }
+    });
+
+    // --- 2.2 CONTROLA O CLIQUE DO SININHO ---
+    const notifBtn = document.getElementById('notifBtn');
+    const notifDropdown = document.getElementById('notifDropdown');
+
+    if (notifBtn && notifDropdown) {
+        notifBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); 
+            if (notifDropdown.style.display === 'none' || notifDropdown.style.display === '') {
+                notifDropdown.style.display = 'block';
+            } else {
+                notifDropdown.style.display = 'none';
+            }
+        });
+    }
+
+    // Fecha o sininho se o usuário clicar fora dele
+    document.addEventListener('click', function() {
+        if (notifDropdown) {
+            notifDropdown.style.display = 'none';
+        }
+    });
+
     // --- 3. CHAT LIST (TOGGLE) ---
     const chatToggle = document.getElementById('toggleChatList');
     const chatList = document.querySelector('.chat-sidebar-list');
@@ -51,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 4. VALIDAÇÃO DE CADASTRO (18 ANOS) ---
+    // (Nota: Mantido original. Se você estiver usando o formulário renderizado pelo Django, esta função via JS puro pode não ser chamada, mas não atrapalha).
     const formCadastro = document.getElementById('formCadastro');
     if (formCadastro) {
         formCadastro.addEventListener('submit', function(event) {
@@ -88,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 6. VALIDAÇÃO E REDIRECIONAMENTO DE LOGIN ---
+    // (Nota: Mantido original para páginas estáticas, o Django usa o ID formLoginDjango que te enviei antes, então eles não entram em conflito).
     const formLogin = document.getElementById('formLogin');
     if (formLogin) {
         formLogin.addEventListener('submit', function(event) {

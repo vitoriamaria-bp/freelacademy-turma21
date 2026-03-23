@@ -13,11 +13,34 @@
         </div>
     </div>
 
+    {% if messages %}
+        <div style="margin-bottom: 25px;">
+            {% for message in messages %}
+                <div style="padding: 15px 20px; border-radius: 8px; color: white; background-color: {% if message.tags == 'error' %}#d93025{% else %}#2ecc71{% endif %}; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                    <i class="fas {% if message.tags == 'error' %}fa-exclamation-circle{% else %}fa-check-circle{% endif %}" style="font-size: 1.2rem;"></i> 
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <div class="stats-grid">
-        <div class="stat-card card-blue"><div class="stat-icon icon-blue"><i class="fas fa-layer-group"></i></div><div class="stat-data"><p>Projetos Ativos</p><h3>{{ projetos.count }}</h3></div></div>
-        <div class="stat-card card-purple"><div class="stat-icon icon-purple"><i class="fas fa-file-contract"></i></div><div class="stat-data"><p>Propostas</p><h3>0</h3></div></div>
-        <div class="stat-card card-green"><div class="stat-icon icon-green"><i class="fas fa-check-circle"></i></div><div class="stat-data"><p>Concluídos</p><h3>0</h3></div></div>
-        <div class="stat-card card-orange"><div class="stat-icon icon-orange"><i class="fas fa-lock"></i></div><div class="stat-data"><p>Em Custódia</p><h3>R$ 0,00</h3></div></div>
+        <div class="stat-card card-blue">
+            <div class="stat-icon icon-blue"><i class="fas fa-layer-group"></i></div>
+            <div class="stat-data"><p>Projetos Ativos</p><h3>{{ projetos_ativos }}</h3></div>
+        </div>
+        <div class="stat-card card-purple">
+            <div class="stat-icon icon-purple"><i class="fas fa-file-contract"></i></div>
+            <div class="stat-data"><p>Propostas</p><h3>{{ total_propostas }}</h3></div>
+        </div>
+        <div class="stat-card card-green">
+            <div class="stat-icon icon-green"><i class="fas fa-check-circle"></i></div>
+            <div class="stat-data"><p>Concluídos</p><h3>{{ projetos_concluidos }}</h3></div>
+        </div>
+        <div class="stat-card card-orange">
+            <div class="stat-icon icon-orange"><i class="fas fa-lock"></i></div>
+            <div class="stat-data"><p>Em Custódia</p><h3>R$ {{ em_custodia|floatformat:2 }}</h3></div>
+        </div>
     </div>
 
     <div class="table-box">
@@ -40,7 +63,7 @@
                         <div style="display: flex; align-items: center;">
                             <div class="cat-icon cat-dev"><i class="fas fa-briefcase"></i></div>
                             <div class="project-info">
-                                <a href="#" class="project-title" style="text-decoration: none;">{{ projeto.titulo }}</a>
+                                <a href="{% url 'cliente_detalhes_projeto' %}" class="project-title" style="text-decoration: none;">{{ projeto.titulo }}</a>
                                 <span class="project-cat">Criado em: {{ projeto.data_criacao|date:"d/m/Y" }}</span>
                             </div>
                         </div>
@@ -51,11 +74,19 @@
                             <span style="font-size: 0.85rem; color: #666;">Entrega: {{ projeto.prazo|date:"d/m/Y" }}</span>
                         </div>
                     </td>
-                    <td><span class="badge badge-active">{{ projeto.get_status_display }}</span></td>
+                    <td>
+                        <span class="badge {% if projeto.status == 'aberto' %}badge-pending{% elif projeto.status == 'em_andamento' %}badge-active{% else %}badge-secondary{% endif %}">
+                            {{ projeto.get_status_display }}
+                        </span>
+                    </td>
                     <td style="text-align: right;">
                         <div style="display: flex; gap: 10px; justify-content: flex-end;">
-                            <a href="#" class="btn-manage">Ver</a>
-                            <a href="{% url 'deletar_projeto' projeto.pk %}" class="btn-manage" style="background: #fff0f0; border-color: #ffcccc; color: #d93025;" onclick="return confirm('Tem certeza que deseja apagar o projeto?');">Apagar</a>
+                            <a href="{% url 'cliente_detalhes_projeto' %}" class="btn-manage">Ver</a>
+                            
+                            <form action="{% url 'deletar_projeto' projeto.pk %}" method="POST" style="margin: 0; padding: 0;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn-manage" style="background: #fff0f0; border-color: #ffcccc; color: #d93025; cursor: pointer;" onclick="return confirm('Tem certeza que deseja apagar o projeto? Esta ação não pode ser desfeita.');">Apagar</button>
+                            </form>
                         </div>
                     </td>
                 </tr>
