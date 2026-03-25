@@ -26,9 +26,9 @@ public class TelaHome extends javax.swing.JFrame {
     private void initComponents() {
 
         btnEntrar = new javax.swing.JButton();
-        btnComoFunciona = new javax.swing.JButton();
-        btnPoliticaPrivacidade = new javax.swing.JButton();
-        btnTermosCond = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,32 +46,17 @@ public class TelaHome extends javax.swing.JFrame {
         getContentPane().add(btnEntrar);
         btnEntrar.setBounds(890, 10, 180, 40);
 
-        btnComoFunciona.setText("Como Funciona");
-        btnComoFunciona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComoFuncionaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnComoFunciona);
-        btnComoFunciona.setBounds(340, 10, 130, 30);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(530, 10, 90, 30);
 
-        btnPoliticaPrivacidade.setText("Politica de Privacidade");
-        btnPoliticaPrivacidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPoliticaPrivacidadeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnPoliticaPrivacidade);
-        btnPoliticaPrivacidade.setBounds(480, 10, 170, 30);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(680, 10, 110, 30);
 
-        btnTermosCond.setText("Termos e Cond. de Uso");
-        btnTermosCond.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTermosCondActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnTermosCond);
-        btnTermosCond.setBounds(660, 10, 190, 30);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco.png"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(410, 10, 70, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaHome.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -90,33 +75,6 @@ public class TelaHome extends javax.swing.JFrame {
         //função pra fechar janela anterior
             this.dispose();
     }//GEN-LAST:event_btnEntrarActionPerformed
-
-    private void btnPoliticaPrivacidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliticaPrivacidadeActionPerformed
-        //botao que leva o usuario as politicas de privacidade
-        TelaPoliticaPrivacidade tela = new TelaPoliticaPrivacidade();
-        tela.setVisible(true);
-        
-        //função para fechar janela anterior
-            this.dispose();
-    }//GEN-LAST:event_btnPoliticaPrivacidadeActionPerformed
-
-    private void btnComoFuncionaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComoFuncionaActionPerformed
-        //botao que leva o usuario ao como funciona
-        TelaComoFunciona tela = new TelaComoFunciona();
-        tela.setVisible(true);
-        
-        //função que fecha janela anterior
-            this.dispose();
-    }//GEN-LAST:event_btnComoFuncionaActionPerformed
-
-    private void btnTermosCondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTermosCondActionPerformed
-        //botao que leva o usuario aos Termos de Uso
-        TelaTermosCond tela = new TelaTermosCond();
-        tela.setVisible(true);
-        
-        //Função que fecha janela anterior
-            this.dispose();
-    }//GEN-LAST:event_btnTermosCondActionPerformed
 
     public static void main(String args[]) {
         
@@ -142,10 +100,10 @@ public class TelaHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnComoFunciona;
     private javax.swing.JButton btnEntrar;
-    private javax.swing.JButton btnPoliticaPrivacidade;
-    private javax.swing.JButton btnTermosCond;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

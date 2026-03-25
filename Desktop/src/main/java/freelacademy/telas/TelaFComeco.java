@@ -102,7 +102,7 @@ public class TelaFComeco extends javax.swing.JFrame {
         getContentPane().add(btnCandidatar3);
         btnCandidatar3.setBounds(850, 440, 140, 27);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaFComeco.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaEComeco.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(0, 0, 1100, 700);

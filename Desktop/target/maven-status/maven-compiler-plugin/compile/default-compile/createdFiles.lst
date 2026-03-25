@@ -1,5 +1,4 @@
 freelacademy\telas\TelaFComeco$7.class
-freelacademy\telas\TelaHome$3.class
 freelacademy\telas\TelaEscolhe$1.class
 freelacademy\telas\TelaLogin$3.class
 freelacademy\telas\TelaEPortifolio$5.class
@@ -84,7 +83,6 @@ freelacademy\telas\FreelAcademy$1.class
 freelacademy\telas\Main.class
 freelacademy\telas\TelaBackup$1.class
 freelacademy\telas\TelaFComeco$6.class
-freelacademy\telas\TelaHome$2.class
 freelacademy\telas\TelaFCarteira$2.class
 freelacademy\telas\TelaFConfiguracoes$4.class
 freelacademy\telas\TelaEConfiguracoes$5.class
@@ -110,7 +108,6 @@ freelacademy\telas\TelaCadastro$4.class
 dao\UsuarioDAO.class
 freelacademy\telas\TelaFProjetos$3.class
 freelacademy\telas\TelaEHome.class
-freelacademy\telas\TelaHome$4.class
 freelacademy\telas\TelaEProjetos$1.class
 freelacademy\telas\TelaEsqueceSenha.class
 freelacademy\telas\TelaFComeco$1.class

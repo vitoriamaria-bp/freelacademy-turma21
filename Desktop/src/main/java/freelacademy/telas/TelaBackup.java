@@ -34,7 +34,7 @@ public class TelaBackup extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btnBackup.setText("BACKUP");
+        btnBackup.setText("FAZER  BACKUP");
         btnBackup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackupActionPerformed(evt);

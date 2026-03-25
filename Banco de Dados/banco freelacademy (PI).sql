@@ -5,7 +5,7 @@ USE db_freelacademy
 CREATE TABLE tb_freelancer (
 	id_freelancer INT IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR(255),
-	email VARCHAR(255),
+	email VARCHAR(255) NOT NULL UNIQUE, 
 	telefone VARCHAR(30),
 	descricao VARCHAR(255),
 	foto_perfil TEXT,

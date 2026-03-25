@@ -32,7 +32,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnBackup">
       <Properties>
-        <Property name="text" type="java.lang.String" value="BACKUP"/>
+        <Property name="text" type="java.lang.String" value="FAZER  BACKUP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackupActionPerformed"/>
